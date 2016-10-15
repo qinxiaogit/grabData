@@ -15,7 +15,8 @@
         "symfony/css-selector": "3.1.*",
         "symfony/dom-crawler": "3.1.*",
         "barryvdh/laravel-ide-helper": "^2.2",
-        "doctrine/dbal": "^2.5"
+        "doctrine/dbal": "^2.5",
+        "phpunit/phpunit-selenium": "^3.0"
     },
     "autoload": {
         "classmap": [
@@ -27,7 +28,7 @@
     },
     "autoload-dev": {
         "classmap": [
-            "tests/TestCase.php"
+          "tests/TestCase.php"
         ]
     },
     "scripts": {
