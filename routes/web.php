@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['middleware' => ['web']], function () {
+    /** Show Task Dashboard*/
+    Route::get('/todo', 'TasksController@index');
+
+    /** Add New Task*/
+    Route::post('/todo/task', 'TasksController@store');
+
+    /** Delete Task*/
+    Route::post('/todo/task/{id}', 'TasksController@destroy');
+});
+
