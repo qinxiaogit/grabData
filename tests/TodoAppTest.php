@@ -54,4 +54,28 @@ class TodoAppTest extends TestCase
                 'name' => 'Task 1'
             ]);
     }
+
+    /** @test */
+    public function 新增1筆task立即刪除()
+    {
+        $this->visit($this->rootURL)
+            ->dontSee('Task 1')
+            ->dontSeeInDatabase('tasks', [
+                'name' => 'Task 1'
+            ]);
+
+        $this->visit($this->rootURL)
+            ->type('Task 1', 'name')
+            ->press('Add Task')
+            ->see('Task 1')
+            ->seeInDatabase('tasks', [
+                'name' => 'Task 1'
+            ]);
+
+        $this->post($this->rootURL . '/task/1')
+            ->dontSee('Task 1')
+            ->dontSeeInDatabase('tasks', [
+                'name' => 'Task 1'
+            ]);
+    }
 }
