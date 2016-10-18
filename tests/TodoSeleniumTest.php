@@ -43,4 +43,19 @@ class TodoSeleniumTest extends PHPUnit_Extensions_Selenium2TestCase
         $this->assertContains('Task 2', $this->byTag('body')->text());
         $this->assertContains('Task 3', $this->byTag('body')->text());
     }
+
+    /** @test */
+    public function 新增1筆task並顯示在下方()
+    {
+        $this->url($this->rootURL);
+        $this->assertNotContains('Task 1', $this->byTag('body')->text());
+
+        $this->url($this->rootURL);
+        $this->byName('name')->value('Task 1');
+        $this->byXPath("//button[contains(text(), 'Add Task')]")->click();
+
+        sleep($this->ajaxDelay);
+
+        $this->assertContains('Task 1', $this->byTag('body')->text());
+    }
 }
