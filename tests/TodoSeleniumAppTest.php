@@ -36,4 +36,23 @@ class TodoSeleniumAppTest extends TestCaseSelenium
                 'name' => 'Task 3',
             ]);
     }
+
+    /** @test */
+    public function 新增1筆task並顯示在下方()
+    {
+        $this->visit($this->rootURL)
+            ->dontSee('Task 1')
+            ->dontSeeInDatabase('tasks', [
+                'name' => 'Task 1'
+            ]);
+
+        $this->visit($this->rootURL)
+            ->type('Task 1', 'name')
+            ->press('Add Task')
+            ->hold($this->ajaxDelay)
+            ->see('Task 1')
+            ->seeInDatabase('tasks', [
+                'name' => 'Task 1'
+            ]);
+    }
 }
