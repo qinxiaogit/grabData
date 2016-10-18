@@ -55,4 +55,30 @@ class TodoSeleniumAppTest extends TestCaseSelenium
                 'name' => 'Task 1'
             ]);
     }
+
+    /** @test */
+    public function 新增1筆task立即刪除()
+    {
+        $this->visit($this->rootURL)
+            ->dontSee('Task 1')
+            ->dontSeeInDatabase('tasks', [
+                'name' => 'Task 1'
+            ]);
+
+        $this->visit($this->rootURL)
+            ->type('Task 1', 'name')
+            ->press('Add Task')
+            ->hold($this->ajaxDelay)
+            ->see('Task 1')
+            ->seeInDatabase('tasks', [
+                'name' => 'Task 1'
+            ]);
+
+        $this->press('Delete')
+            ->hold($this->ajaxDelay)
+            ->dontSee('Task 1')
+            ->dontSeeInDatabase('tasks', [
+                'name' => 'Task 1'
+            ]);
+    }
 }
