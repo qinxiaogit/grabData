@@ -16,7 +16,7 @@ class TodoAppTest extends TestCase
     }
 
     /** @test */
-    public function 一啟動顯示3筆task()
+    public function testStart()
     {
         factory(Task::class)->create(['name' => 'Task 1']);
         factory(Task::class)->create(['name' => 'Task 2']);
@@ -38,7 +38,7 @@ class TodoAppTest extends TestCase
     }
 
     /** @test */
-    public function 新增1筆task並顯示在下方()
+    public function testTwo()
     {
         $this->visit($this->rootURL)
             ->dontSee('Task 1')
@@ -56,7 +56,7 @@ class TodoAppTest extends TestCase
     }
 
     /** @test */
-    public function 新增1筆task立即刪除()
+    public function testThree()
     {
         $this->visit($this->rootURL)
             ->dontSee('Task 1')

@@ -7,7 +7,7 @@ use App\Task;
 class TodoSeleniumTest extends PHPUnit_Extensions_Selenium2TestCase
 {
     /** @var string */
-    private $rootURL = 'todo2';
+    private $rootURL = '';
     /** @var int */
     private $ajaxDelay = 1;
 
@@ -31,7 +31,7 @@ class TodoSeleniumTest extends PHPUnit_Extensions_Selenium2TestCase
     }
 
     /** @test */
-    public function 一啟動顯示3筆task()
+    public function createTask()
     {
         factory(Task::class)->create(['name' => 'Task 1']);
         factory(Task::class)->create(['name' => 'Task 2']);
@@ -45,7 +45,7 @@ class TodoSeleniumTest extends PHPUnit_Extensions_Selenium2TestCase
     }
 
     /** @test */
-    public function 新增1筆task並顯示在下方()
+    public function testTwo()
     {
         $this->url($this->rootURL);
         $this->assertNotContains('Task 1', $this->byTag('body')->text());
@@ -60,7 +60,7 @@ class TodoSeleniumTest extends PHPUnit_Extensions_Selenium2TestCase
     }
 
     /** @test */
-    public function 新增1筆task立即刪除()
+    public function testDel()
     {
         $this->url($this->rootURL);
         $this->assertNotContains('Task 1', $this->byTag('body')->text());
