@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Elasticquent\ElasticquentTrait;
 
 /**
  * App\Task
@@ -19,6 +20,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Task extends Model
 {
+    use ElasticquentTrait;
     protected $fillable = [
         'title',
         'id',
