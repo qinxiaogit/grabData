@@ -11,8 +11,10 @@
 |
 */
 
-$factory->define(App\Task::class, function (Faker\Generator $faker) {
-    return [
-        'name' => $faker->title,
-    ];
-});
+//$factory->define(App\Model\Task::class, function (Faker\Generator $faker) {
+//    return [
+//        'name' => $faker->title,
+//    ];
+//});
+
+

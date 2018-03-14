@@ -5,10 +5,10 @@ declare(strict_types = 1);
 namespace App\Services;
 
 use App\Repositories\TaskRepository;
-use App\Task;
+use App\Model\Task;
 use Illuminate\Database\Eloquent\Collection;
 
-class TaskService
+class TaskService extends Service
 {
     /** @var TaskRepository */
     private $taskRepository;

@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-use App\Task;
+use App\Model\Task;
 
 class TodoAppTest extends TestCase
 {

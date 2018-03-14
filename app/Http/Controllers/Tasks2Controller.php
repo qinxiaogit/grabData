@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreTaskRequest;
 use App\Services\TaskService;
-use App\Task;
+use App\Model\Task;
 use Response;
 
 class Tasks2Controller extends Controller

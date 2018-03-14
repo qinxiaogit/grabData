@@ -4,7 +4,8 @@ declare(strict_types = 1);
 
 namespace App\Repositories;
 
-use App\Task;
+//use App\Task;
+use App\Model\Task;
 use Illuminate\Database\Eloquent\Collection;
 
 class TaskRepository

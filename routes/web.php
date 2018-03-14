@@ -33,5 +33,7 @@ Route::group(['middleware' => ['web']], function () {
 
     /** Delete Task*/
     Route::post('/todo2/task/{id}', 'Tasks2Controller@destroy');
+
+    Route::get('/blog','BlogController@index');
 });
 

@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-use App\Task;
+use App\Model\Task;
 
 class TodoSeleniumTest extends PHPUnit_Extensions_Selenium2TestCase
 {
