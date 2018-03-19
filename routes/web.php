@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+//,'auth.basic'
 Route::group(['middleware' => ['web']], function () {
     /** Show Task Dashboard*/
     Route::get('/todo', 'TasksController@index');
@@ -37,3 +37,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/blog','BlogController@index');
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+Route::get('/elk', 'HomeController@elk');
