@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+//,'auth.basic'
 Route::group(['middleware' => ['web']], function () {
     /** Show Task Dashboard*/
     Route::get('/todo', 'TasksController@index');
@@ -41,4 +41,10 @@ Route::get('/cache/{id}', function ($id){
     return response('hello world',200)->header('Content-Type', 'text/plain');;
 })->where(['id'=>'[0-9]+']);
 
+
 Route::resource('photo','PhotoController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+Route::get('/elk', 'HomeController@elk');

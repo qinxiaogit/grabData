@@ -1,0 +1,28 @@
+version: '2'
+
+service : 
+    im_service:
+       build:
+       content: 'golang'
+    db:
+      image: mysql
+      ports:
+       - "3306:3306"
+      volumes:
+       - ./db:/var/lib/mysql
+      networks:
+       - web-db
+    redis:
+      image:redis
+      ports:
+       - "6379:6379"
+
+
+
+networks:
+
+   web-db:
+     driver: bridge
+
+   web-redis:
+     driver: bridge
