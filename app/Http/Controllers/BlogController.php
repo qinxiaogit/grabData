@@ -16,6 +16,7 @@ class BlogController extends Controller
     public function index(Request $request){
 
         $data['article'] = $this->blogService->index();
+        dd($data);
         \Debugbar::info($data);
         return view('blog.welcome',$data);
     }

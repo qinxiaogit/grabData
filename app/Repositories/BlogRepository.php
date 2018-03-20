@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Collection;
 
 class BlogRepository extends Repository{
 
-    public function index() : Collection
+    public function index(): Collection
     {
         return Article::orderBy('created_at','desc')->get();
     }

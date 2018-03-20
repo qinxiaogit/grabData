@@ -34,6 +34,11 @@ Route::group(['middleware' => ['web']], function () {
     /** Delete Task*/
     Route::post('/todo2/task/{id}', 'Tasks2Controller@destroy');
 
-    Route::get('/blog','BlogController@index');
+    Route::get('/blog','BlogController@index')->name('blog');
 });
+Route::get('/cache')->middleware('test:1234');
+Route::get('/cache/{id}', function ($id){
+    return response('hello world',200)->header('Content-Type', 'text/plain');;
+})->where(['id'=>'[0-9]+']);
 
+Route::resource('photo','PhotoController');
