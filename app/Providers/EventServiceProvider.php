@@ -15,6 +15,9 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         'App\Events\SomeEvent' => [
             'App\Listeners\EventListener',
+        ],//日志事件监听器
+        'App\Events\ElkLogEvent'=> [
+            'App\Listeners\ElkLogEventListener'
         ],
     ];
 

@@ -1,9 +1,13 @@
 FROM  golang
-RUN cd $GOPATH/src/github.com/GoBelieveIO
-RUN  yum install -y git
-RUN  git clone https://github.com/GoBelieveIO/im_service.git
+RUN  mkdir -p /go/src/GoBelieveIO
+WORKDIR /go/src/GoBelieveIO
+COPY . /go/src/GoBelieveIO
+CMD ["go-wrapper", "run"]
+ONBUILD COPY . /go/src/GoBelieveIO
+ONBUILD RUN go-wrapper download
+ONBUILD RUN go-wrapper install
 
-RUN cd im_service
+RUN  cd im_service
 RUN  go get google.golang.org/grpc
   
 RUN  go get -u github.com/golang/protobuf/{proto,protoc-gen-go}
@@ -31,5 +35,8 @@ RUN go get github.com/richmonkey/cfg
 RUn go get github.com/valyala/gorpc
 
 RUN go get google.golang.org/grpc
+
+RUN go get -d -v
+RUN go install -v
 
 RUN make install

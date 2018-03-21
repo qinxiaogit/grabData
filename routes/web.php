@@ -48,3 +48,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 Route::get('/elk', 'HomeController@elk');
+Route::get('/event', 'HomeController@event');
