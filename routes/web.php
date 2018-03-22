@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 //,'auth.basic'
 Route::group(['middleware' => ['web']], function () {
     /** Show Task Dashboard*/
@@ -46,6 +46,6 @@ Route::resource('photo','PhotoController');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/', 'HomeController@index');
 Route::get('/elk', 'HomeController@elk');
 Route::get('/event', 'HomeController@event');
