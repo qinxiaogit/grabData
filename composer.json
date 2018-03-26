@@ -8,7 +8,10 @@
         "php": ">=5.6.4",
         "laravel/framework": "5.3.*",
         "barryvdh/laravel-debugbar": "~2.4",
-        "elasticquent/elasticquent": "dev-master"
+        "elasticquent/elasticquent": "dev-master",
+        "dingo/api": "v1.0.0-beta6",
+        "overtrue/phplint": "^1.1",
+        "tymon/jwt-auth": "^0.5.12"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

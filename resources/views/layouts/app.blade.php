@@ -19,12 +19,13 @@
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>
+    <script src="/js/jquery.min.js"></script>
     <!-- import Vue.js -->
-    <script src="//vuejs.org/js/vue.min.js"></script>
-    <!-- import stylesheet -->
-    <link rel="stylesheet" href="//unpkg.com/iview/dist/styles/iview.css">
-    <!-- import iView -->
-    <script src="//unpkg.com/iview/dist/iview.min.js"></script>
+    {{--<script src="//vuejs.org/js/vue.min.js"></script>--}}
+    {{--<!-- import stylesheet -->--}}
+    {{--<link rel="stylesheet" href="//unpkg.com/iview/dist/styles/iview.css">--}}
+    {{--<!-- import iView -->--}}
+    {{--<script src="//unpkg.com/iview/dist/iview.min.js"></script>--}}
 </head>
 <body>
     <div id="app">

@@ -180,8 +180,10 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Elasticquent\ElasticquentServiceProvider::class,
-        Barryvdh\Debugbar\ServiceProvider::class
-
+//        Barryvdh\Debugbar\ServiceProvider::class,
+        Dingo\Api\Provider\LaravelServiceProvider::class,
+        App\Providers\JwtAuthServiceProvider::class,
+        Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class
     ],
 
     /*
@@ -230,7 +232,9 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Es' => Elasticquent\ElasticquentElasticsearchFacade::class,
-        'Debugbar' => Barryvdh\Debugbar\Facade::class
+//        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'JWTAuth' => 'Tymon\JWTAuth\Facades\JWTAuth',
+        'JWTFactory' => 'Tymon\JWTAuth\Facades\JWTFactory'
     ],
 
 ];

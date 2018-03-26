@@ -14,11 +14,27 @@
                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                     <span class="caret"></span>
                 </button>
-                <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                </ul>
+                {{--<ul class="dropdown-menu dropdown-menu-right" role="menu">--}}
+                {{--</ul>--}}
             </div>
             <!-- /btn-group -->
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $("#baidu").change(function (event) {
+        $.ajax({
+            type: "POST",
+            url: '/',
+            data: {
+                keyWord:$(this).val()
+            },
+            success: function (res) {
+                console.log(res)
+            },
+            dataType: 'json',
+        })
+    });
+</script>
 @endsection
+
